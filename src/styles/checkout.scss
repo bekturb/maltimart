@@ -1,0 +1,40 @@
+
+.billing{
+  &__input{
+    width: 95%;
+    border: 1px solid var(--card-bg-02);
+  }
+  &__row{
+    align-items: initial !important;
+  }
+  &__cart{
+    padding: 20px;
+    margin-top: 40px;
+    margin-left: 40px;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 5px;
+  }
+  &__item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--margin{
+      margin-bottom: 20px;
+    }
+    &--border{
+      border-top: 1px solid rgba(221, 221, 221, 0.253);
+      padding-top: 20px;
+    }
+  }
+  &__btn{
+    margin-top: 20px;
+    background: #fff !important;
+    color: var(--primary-color) !important;
+    width: 100% !important;
+  }
+  &__information{
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

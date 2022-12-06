@@ -1,0 +1,36 @@
+
+.auth{
+  text-align: center;
+  &__column{
+    margin: 0 auto!important;
+  }
+  &__title{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  &__btn{
+    margin-top: 20px;
+    background: #fff !important;
+    color: var(--primary-color) !important;
+    font-weight: 600 !important;
+  }
+
+}
+
+.form{
+  background: var(--primary-color);
+  padding: 40px;
+  border-radius: 5px;
+
+  &__create{
+    font-size: 1rem;
+    margin-top: 30px;
+    color: rgba(255, 255, 255, 0.735);
+  }
+
+  &__account{
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.735);
+  }
+}

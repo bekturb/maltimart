@@ -1,0 +1,202 @@
+
+.hero {
+  background: var(--hero-bg);
+
+  &__title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+
+  &__content {
+    padding-top: 45px;
+  }
+
+  &__subtitle {
+    color: var(--primary-color);
+    line-height: 28px;
+  }
+
+  &__subtitle--weight {
+    font-weight: 500;
+  }
+
+  &__btn {
+    margin-top: 40px;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.section-title--align {
+  text-align: center;
+}
+
+
+.timer-panel {
+  background: var(--primary-color);
+  height: 300px;
+
+  &__img {
+    width: 70% !important;
+    height: 70% !important;
+    object-fit: contain;
+  }
+
+  &__column {
+    text-align: end;
+  }
+
+  &--row {
+    align-items: initial !important;
+  }
+}
+
+.clock {
+  &__top-content {
+
+  }
+
+  &__title {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &__subtitle {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  &__btn {
+    color: var(--primary-color) !important;
+    background: #fff !important;
+    font-weight: 600;
+    margin-top: 30px;
+
+    &:hover {
+      transition: .2s;
+      transform: scale(1.1);
+    }
+  }
+
+  &__items {
+    text-align: center;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: .7rem;
+  }
+
+  &__data {
+    gap: 1rem;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__number {
+    color: white;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  &__day {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__dots {
+    color: white;
+    font-size: 17px;
+    font-weight: 400;
+  }
+}
+
+.new-arrivals {
+  &__title {
+    text-align: center;
+    margin-bottom: 40px !important;
+  }
+}
+
+.popular {
+  &__title {
+    text-align: center;
+    margin-bottom: 40px !important;
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+
+  .hero {
+    &__title {
+      font-size: 2rem;
+    }
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .hero {
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__subtitle {
+      font-size: 0.9rem;
+    }
+
+    &__btn {
+      font-size: 0.9rem !important;
+    }
+  }
+  .timer-panel{
+    .col-6__width{
+      width: 100%;
+    }
+
+    &__column{
+      display: none;
+    }
+  }
+
+  .clock{
+    text-align: center;
+  }
+}
+
+.section-title {
+  font-size: 1.4rem !important;
+}
+
+@media only screen and (max-width: 576px) {
+
+  .hero {
+    &__column {
+      width: inherit !important;
+    }
+
+    &__content {
+      padding-top: 0;
+      margin-bottom: 40px;
+    }
+  }
+
+}

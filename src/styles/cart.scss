@@ -1,0 +1,63 @@
+.table{
+  border-collapse: collapse;
+  width: 90%;
+  &__row{
+    text-align: left;
+  }
+  &__th{
+    border-bottom: 1px solid black;
+    padding: 15px;
+    color: var(--primary-color);
+  }
+  &__td{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: var(--primary-color);
+    i{
+      cursor: pointer;
+    }
+  }
+  &__tdImg{
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: cover;
+  }
+}
+
+.cart{
+  &__subtotal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  &__amount{
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  &__taxes{
+    font-size: .9rem;
+    margin-top: 20px;
+  }
+}
+
+.cart-row{
+  align-items: start !important;
+}
+
+.buttons{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__btn{
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.empty-items{
+  text-align: center;
+}
