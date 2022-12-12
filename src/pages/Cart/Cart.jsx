@@ -8,9 +8,11 @@ import {useSelector, useDispatch} from "react-redux";
 
 import '@styles/cart.scss'
 import {Link} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const Cart = () => {
 
+    const {t} = useTranslation();
     const cartItems = useSelector( (state) => state.cart.cartItems)
     const totalAmount = useSelector( (state) => state.cart.totalAmount)
 
@@ -22,15 +24,15 @@ const Cart = () => {
                     <div className="row cart-row">
                         <div className="col-9">
                             {
-                                cartItems.length === 0 ? <h2 className="empty-items">No item added to the cart</h2> :
+                                cartItems.length === 0 ? <h2 className="empty-items">{t("noItem.1")}</h2> :
                                     <table className="table">
                                         <thead className="table__thead">
                                         <tr className="table__row">
-                                            <th className="table__th">Image</th>
-                                            <th className="table__th">Title</th>
-                                            <th className="table__th">Price</th>
-                                            <th className="table__th">Qty</th>
-                                            <th className="table__th">Delete</th>
+                                            <th className="table__th">{t("Image.1")}</th>
+                                            <th className="table__th">{t("Title.1")}</th>
+                                            <th className="table__th">{t("Price.1")}</th>
+                                            <th className="table__th">{t("Qty.1")}</th>
+                                            <th className="table__th">{t("Delete.1")}</th>
                                         </tr>
                                         </thead>
 
@@ -47,14 +49,14 @@ const Cart = () => {
                         <div className="col-3">
                             <div className="cart__total">
                                 <h6 className="cart__subtotal">
-                                    Subtotal
+                                    {t("Subtotal.1")}
                                     <span className="cart__amount">${totalAmount}</span>
                                 </h6>
                             </div>
-                            <p className="cart__taxes">taxes and shipping will calculate in checkout</p>
+                            <p className="cart__taxes">{t("taxes.1")}</p>
                             <div className="buttons">
-                                <button className="button buttons__btn"><Link to="/checkout">Checkout</Link></button>
-                                <button className="button buttons__btn"><Link to="/shop">Continue Shopping</Link></button>
+                                <button className="button buttons__btn"><Link to="/checkout">{t("Checkout.1")}</Link></button>
+                                <button className="button buttons__btn"><Link to="/shop">{t("Continue.1")}</Link></button>
                             </div>
                         </div>
                     </div>
@@ -66,6 +68,8 @@ const Cart = () => {
 
 const Tr = ({item}) => {
 
+    const {t} = useTranslation();
+
     const dispatch = useDispatch()
 
     const deleteProduct = () => {
@@ -74,7 +78,7 @@ const Tr = ({item}) => {
 
     return <tr>
         <td className="table__td"><img className="table__tdImg" src={item.imgUrl} alt=""/></td>
-        <td className="table__td">{item.productName}</td>
+        <td className="table__td">{t(`${item.productName}.1`)}</td>
         <td className="table__td">${item.price}</td>
         <td className="table__td">{item.quantity}</td>
         <td className="table__td">

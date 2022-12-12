@@ -31,7 +31,7 @@ import productImg25 from "../images/wireless-03.png";
 const products = [
     {
         id: "01",
-        productName: "Stone and Beam Westview ",
+        productName: "Stone and Beam Westview",
         imgUrl: productImg01,
         category: "sofa",
         price: 193,
@@ -50,7 +50,7 @@ const products = [
 
     {
         id: "02",
-        productName: "Rivet Bigelow Modern ",
+        productName: "Rivet Bigelow Modern",
         imgUrl: productImg02,
         category: "sofa",
         price: 253,
@@ -95,7 +95,7 @@ const products = [
     },
     {
         id: "26",
-        productName: "Rivet Bigelow Modern ",
+        productName: "Rivet Bigelow Modern",
         imgUrl: productImg02,
         category: "sofa",
         price: 253,

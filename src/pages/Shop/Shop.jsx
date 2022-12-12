@@ -8,8 +8,10 @@ import products from '@static/data/products'
 
 import '@styles/shop.scss'
 import ProductList from "../../components/UI/ProductList";
+import {useTranslation} from "react-i18next";
 const Shop = () => {
 
+    const {t} = useTranslation();
     const [productsData, setProductData] = useState(products)
     const handleFilter = (e) => {
         const filterValue = e.target.value;
@@ -63,27 +65,27 @@ const Shop = () => {
                         <div className="col-3 filter--column">
                             <div className="filter__widget">
                                 <select className="sort" onChange={handleFilter}>
-                                    <option className="sort__category">Filter By Category</option>
-                                    <option className="sort__category" value="sofa">Sofa</option>
-                                    <option className="sort__category" value="mobile">Mobile</option>
-                                    <option className="sort__category" value="chair">Chair</option>
-                                    <option className="sort__category" value="watch">Watch</option>
-                                    <option className="sort__category" value="wireless">Wireless</option>
+                                    <option className="sort__category">{t("Filter By Category.1")}</option>
+                                    <option className="sort__category" value="sofa">{t("sofa.1")}</option>
+                                    <option className="sort__category" value="mobile">{t("mobile.1")}</option>
+                                    <option className="sort__category" value="chair">{t("chair.1")}</option>
+                                    <option className="sort__category" value="watch">{t("watch.1")}</option>
+                                    <option className="sort__category" value="wireless">{t("wireless.1")}</option>
                                 </select>
                             </div>
                         </div>
                         <div className="col-3 filter-column">
                             <div className="filter__widget">
                                 <select className="sort">
-                                    <option className="sort__category">Sort By</option>
-                                    <option className="sort__category" value="ascending">Ascending</option>
-                                    <option className="sort__category" value="descending">Descending</option>
+                                    <option className="sort__category">{t("Sort by.1")}</option>
+                                    <option className="sort__category" value="ascending">{t("Ascending.1")}</option>
+                                    <option className="sort__category" value="descending">{t("Descending.1")}</option>
                                 </select>
                             </div>
                         </div>
                         <div className="col-6 search--column">
                             <div className="search-box">
-                                <input onChange={handleSearch} className="search-box__input" type="text" placeholder="Search......" />
+                                <input onChange={handleSearch} className="search-box__input" type="text" placeholder={t("Search.1")} />
                                 <span className="search-box__icon">
                                     <i className="ri-search-line"></i>
                                 </span>
@@ -97,7 +99,7 @@ const Shop = () => {
                 <div className="container">
                     <div className="row products-sort__row">
                         {
-                            productsData.length === 0? <h1 className="empty">No Products are found!</h1>
+                            productsData.length === 0? <h1 className="empty">{t("NoProducts.1")}</h1>
                                 : <ProductList data={productsData}/>
 
                         }

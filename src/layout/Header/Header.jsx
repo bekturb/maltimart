@@ -1,19 +1,21 @@
 import React, {useRef, useEffect} from 'react';
 import {NavLink, useNavigate} from "react-router-dom";
 import {nav__links} from '@routesData/routes.config'
+import { useTranslation } from 'react-i18next';
 import Logo from '../../static/images/eco-logo.png'
 import userIcon from '../../static/images/user-icon.png'
+import translatedIcon from '../../static/images/translate.svg'
 import {useSelector} from "react-redux";
 import {motion} from "framer-motion";
 import './header.scss'
 
 const Header = () => {
-
     const totalQuantity = useSelector(state => state.cart.totalQuantity)
-
     const navigate = useNavigate()
     const headerRef = useRef(null)
     const menuRef = useRef(null)
+    const languagesRef = useRef(null)
+    const {t} = useTranslation();
 
     const stickyHeaderFunc = ()=>{
         window.addEventListener("scroll", () => {
@@ -27,7 +29,11 @@ const Header = () => {
     }
 
     const menuToggle = () => menuRef.current.classList.toggle("active__menu")
-
+    const languageToggle = () => languagesRef.current.classList.toggle("language__translator")
+    const changeLang = (lang) => {
+        localStorage.setItem("lang", lang);
+        window.location.reload();
+    }
 
     useEffect(() =>{
         stickyHeaderFunc();
@@ -55,7 +61,7 @@ const Header = () => {
                                 <li className="navigation__items" key={index}>
                                 <NavLink className={(navClass) => navClass.isActive ? "nav--active" : ''}
                                          to={item.path}>
-                                    {item.display}
+                                    {t(`${item.display}.1`)}
                                 </NavLink>
                             </li>
                             ))}
@@ -72,6 +78,13 @@ const Header = () => {
                         </span>
                         <span className="user-icon  nav-icons__icon">
                             <motion.img whileTap={{scale: 1.1}} className="img img--width" src={userIcon} alt=""/>
+                        </span>
+                        <span>
+                            <motion.img onClick={languageToggle} whileTap={{scale:1.1}} className="translate" src={translatedIcon} alt=""/>
+                        </span>
+                        <span ref={languagesRef} className="translator">
+                            <motion.button onClick={()=> changeLang("ru")} whileTap={{scale: 1.1}} className="translator__btn">Русский</motion.button>
+                            <motion.button onClick={()=> changeLang("en")} className="translator__btn">English</motion.button>
                         </span>
                         <div className="mobile">
                         <span onClick={menuToggle} className="mobile__burger">

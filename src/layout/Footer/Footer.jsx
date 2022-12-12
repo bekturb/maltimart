@@ -2,9 +2,12 @@ import React from 'react';
 
 import {Link} from "react-router-dom";
 import  './footer.scss'
+import {useTranslation} from "react-i18next";
 
 
 const Footer = () => {
+
+    const {t} = useTranslation();
 
     const year = new Date().getFullYear()
     return (
@@ -27,45 +30,45 @@ const Footer = () => {
                     </div>
                     <div className="col-3 footer__column column-md">
                         <div className="footer__quick-links">
-                            <h4 className="quick__links-title">Top Categories</h4>
+                            <h4 className="quick__links-title">{t("Top.1")}</h4>
                             <ul className="list">
                                 <li className="list__item">
-                                    <Link className="list__link" to="#">Mobile Phones</Link>
+                                    <Link className="list__link" to="#">{t("MobilePhones.1")}</Link>
                                 </li>
                                 <li className="list__item">
-                                    <Link className="list__link" to="#">Modern Sofa</Link>
+                                    <Link className="list__link" to="#">{t("Modern Sofa.1")}</Link>
                                 </li>
                                 <li className="list__item">
-                                    <Link className="list__link" to="#">Arm Chair</Link>
+                                    <Link className="list__link" to="#">{t("Arm.1")}</Link>
                                 </li>
                                 <li className="list__item">
-                                    <Link className="list__link" to="#">Smart Watches</Link>
+                                    <Link className="list__link" to="#">{t("Smart.1")}</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-2 column-md">
                         <div className="footer__quick-links">
-                            <h4 className="quick__links-title">Useful Links</h4>
+                            <h4 className="quick__links-title">{t("Useful.1")}</h4>
                             <ul className="list">
                                 <li className="list__item">
-                                    <Link className="list__link" to="/shop">Shop</Link>
+                                    <Link className="list__link" to="/shop">{t("Shop.1")}</Link>
                                 </li>
                                 <li className="list__item">
-                                    <Link className="list__link" to="/cart">Cart</Link>
+                                    <Link className="list__link" to="/cart">{t("Cart.1")}</Link>
                                 </li>
                                 <li className="list__item">
-                                    <Link className="list__link" to="/login">Login</Link>
+                                    <Link className="list__link" to="/login">{t("Login.1")}</Link>
                                 </li>
                                 <li className="list__item">
-                                    <Link className="list__link" to="#">Privacy Policy</Link>
+                                    <Link className="list__link" to="#">{t("Privacy.1")}</Link>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-3 column-md">
                         <div className="footer__quick-links">
-                            <h4 className="quick__links-title">Contact</h4>
+                            <h4 className="quick__links-title">{t("Contact.1")}</h4>
                             <ul className="list">
                                 <li className="list__item list__item--flex">
                                     <span className="list__icon"><i className="ri-map-pin-line"></i></span>
@@ -83,8 +86,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="col-12">
-                        <p className="footer__copyright">Copyright {year} developed by Bektursun Baimamat. All rights
-                            reserved.
+                        <p className="footer__copyright">{t('Copyright.1')}
                         </p>
                     </div>
                 </div>

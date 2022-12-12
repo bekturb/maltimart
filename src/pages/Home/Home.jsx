@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {Link} from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 import Helmet from "@layout/Helmet";
 import Clock from "../../components/UI/Clock";
 import products from '@static/data/products'
@@ -13,12 +14,12 @@ import Services from "@services";
 import ProductList from "@components/UI/ProductList";
 
 const Home = () => {
-
     const [trendingProducts, setTrendingProducts] = useState([])
     const [bestProducts, setBestProducts] = useState([])
     const [mobilePhone, setMobilePhone] = useState([])
     const [wireless, setWireless] = useState([])
     const [popularProducts, setPopularProducts] = useState([])
+    const {t} = useTranslation();
 
     const year = new Date().getFullYear()
 
@@ -48,14 +49,14 @@ const Home = () => {
                         <div className="col-6 hero__column">
                             <div className="hero__content">
                                 <p className="hero__subtitle hero__subtitle--weight">
-                                    Trending product in {year}
+                                    {t(`Trending.1`)} {year}
                                 </p>
-                                <h2 className="hero__title"> Make Your Interior More Minimalstic & Modern </h2>
+                                <h2 className="hero__title">{t("Make.1")}</h2>
                                 <p className="hero__subtitle"> Lorem ipsum dolor sit amet, consectetur adipisicing
                                     elit. Aliquam aspernatur autem delectus dignissimos
                                     provident quod repellat sapiente sunt suscipit vitae.</p>
                                 <motion.button whileTap={{scale: 1.2}} className='button hero__btn'>
-                                    <Link to="/shop">SHOP NOW</Link>
+                                    <Link to="/shop">{t("Button.1")}</Link>
                                 </motion.button>
                             </div>
                         </div>
@@ -72,7 +73,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row row--justify">
                         <div className="col-12">
-                            <h2 className="section-title section-title--align">Trending Products</h2>
+                            <h2 className="section-title section-title--align">{t("Trending.1")}</h2>
                         </div>
                         <ProductList data={trendingProducts}/>
                     </div>
@@ -82,7 +83,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row row--justify">
                         <div className="col-12">
-                            <h2 className="section-title section-title--align">Best Sales</h2>
+                            <h2 className="section-title section-title--align">{t("Best Sales.1")}</h2>
                         </div>
                         <ProductList data={bestProducts}/>
                     </div>
@@ -94,11 +95,11 @@ const Home = () => {
                         <div className="col-6 col-6__width">
                             <div className="clock">
                                 <div className="clock__top-content">
-                                    <h4 className="clock__title">Limited Offers</h4>
-                                    <h3 className="clock__subtitle">Quality Armchair</h3>
+                                    <h4 className="clock__title">{t("Quality.1")}</h4>
+                                    <h3 className="clock__subtitle">{t("Limited.1")}</h3>
                                 </div>
                                 <Clock/>
-                                <button className="button clock__btn">Visit Store</button>
+                                <button className="button clock__btn">{t("Visit.1")}</button>
                             </div>
                         </div>
                         <div className="col-6 timer-panel__column">
@@ -111,7 +112,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row row--justify">
                         <div className="col-12">
-                            <h2 className="section-title new-arrivals__title">New Arrivals</h2>
+                            <h2 className="section-title new-arrivals__title">{t("New Arrivals.1")}</h2>
                         </div>
                         <ProductList data={mobilePhone}/>
                         <ProductList data={wireless}/>
@@ -122,7 +123,7 @@ const Home = () => {
                 <div className="container">
                     <div className="row row--justify">
                         <div className="col-12">
-                            <h2 className="section-title popular__title">Popular in Categories</h2>
+                            <h2 className="section-title popular__title">{t("Popular.1")}</h2>
                         </div>
                         <ProductList data={popularProducts}/>
                     </div>

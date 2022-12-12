@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '@styles/clock.scss'
+import {useTranslation} from "react-i18next";
 
 const Clock = () => {
 
@@ -7,6 +8,8 @@ const Clock = () => {
     const [hours, setHours] = useState()
     const [minutes, setMinutes] = useState()
     const [seconds, setSeconds] = useState()
+
+    const {t} = useTranslation();
 
     let interval;
 
@@ -44,28 +47,28 @@ const Clock = () => {
             <div className="clock__data">
                 <div className="clock__items">
                     <h1 className="clock__number">{days}</h1>
-                    <h5 className="clock__day">days</h5>
+                    <h5 className="clock__day">{t("days.1")}</h5>
                 </div>
                 <span className="clock__dots">:</span>
             </div>
             <div className="clock__data">
                 <div className="clock__items">
                     <h1 className="clock__number">{hours}</h1>
-                    <h5 className="clock__day">hours</h5>
+                    <h5 className="clock__day">{t("hours.1")}</h5>
                 </div>
                 <span className="clock__dots">:</span>
             </div>
             <div className="clock__data">
                 <div className="clock__items">
                     <h1 className="clock__number">{minutes}</h1>
-                    <h5 className="clock__day">minutes</h5>
+                    <h5 className="clock__day">{t("minutes.1")}</h5>
                 </div>
                 <span className="clock__dots">:</span>
             </div>
             <div className="clock__data">
                 <div className="clock__items">
                     <h1 className="clock__number">{seconds}</h1>
-                    <h5 className="clock__day">seconds</h5>
+                    <h5 className="clock__day">{t("seconds.1")}</h5>
                 </div>
             </div>
         </div>
